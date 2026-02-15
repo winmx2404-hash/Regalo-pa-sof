@@ -33,8 +33,8 @@
     <div id="duo-intro" class="duo-intro">
       <div class="duo-intro-inner">
         <div class="intro-characters">
-          <span class="intro-char husk-char">🐱</span>
-          <span class="intro-char angel-char">🕷️</span>
+          <img class="intro-char husk-char pfp-img" src="pfp/husk1.jpeg" alt="Husk" onerror="this.outerHTML='<span class=\'intro-char husk-char\'>🐱</span>'">
+          <img class="intro-char angel-char pfp-img" src="pfp/angel1.jpeg" alt="Angel Dust" onerror="this.outerHTML='<span class=\'intro-char angel-char\'>🕷️</span>'">
         </div>
         <div class="intro-text" id="intro-text"></div>
         <button id="enter-btn" class="enter-btn hidden">✨ Entrar al Lounge</button>
@@ -212,7 +212,7 @@
           </div>
           <div class="trivia-feedback" id="trivia-feedback"></div>
           <div class="trivia-husk-comment glass" id="trivia-husk-comment">
-            <span class="comment-char">😾</span>
+            <img class="comment-char pfp-small" src="pfp/husk2.jpeg" alt="Husk" onerror="this.outerHTML='<span class=\'comment-char\'>😾</span>'">
             <span id="trivia-comment-text">Husk: "Demuéstrame que sabes algo..."</span>
           </div>
           <button class="game-btn" id="trivia-start-btn">🎮 EMPEZAR TRIVIA</button>
@@ -245,7 +245,7 @@
             </div>
           </div>
           <div class="souls-angel-comment glass" id="souls-angel-comment">
-            <span class="comment-char">🕷️</span>
+            <img class="comment-char pfp-small" src="pfp/angel2.jpeg" alt="Angel" onerror="this.outerHTML='<span class=\'comment-char\'>🕷️</span>'">
             <span id="souls-comment-text">Angel: "¿En serio eres tan lento, cariño?"</span>
           </div>
         </div>
@@ -255,11 +255,15 @@
       <div id="chat-tab" class="tab-content">
         <div class="game-container glass">
           <div class="chat-character-selector">
-            <button class="char-btn active" data-char="husk">😾 Husk</button>
-            <button class="char-btn" data-char="angel">🕷️ Angel Dust</button>
+            <button class="char-btn active" data-char="husk">
+              <img class="char-btn-pfp" src="pfp/husk3.jpeg" alt="Husk" onerror="this.outerHTML='😾'"> Husk
+            </button>
+            <button class="char-btn" data-char="angel">
+              <img class="char-btn-pfp" src="pfp/angel3.jpeg" alt="Angel" onerror="this.outerHTML='🕷️'"> Angel Dust
+            </button>
           </div>
           <div class="chat-header" id="chat-header">
-            <div class="chat-avatar" id="chat-avatar">😾</div>
+            <img class="chat-avatar pfp-medium" id="chat-avatar" src="pfp/husk3.jpeg" alt="Husk" onerror="this.outerHTML='<span class=\'chat-avatar\'>😾</span>'">
             <div>
               <div class="chat-name" id="chat-name">Husk</div>
               <div class="chat-status">En el bar del infierno</div>
@@ -294,8 +298,12 @@
             </div>
           </div>
           <div class="story-choices" id="story-choices">
-            <button class="story-choice-btn" data-choice="husk">😾 Hablar con Husk</button>
-            <button class="story-choice-btn" data-choice="angel">🕷️ Hablar con Angel</button>
+            <button class="story-choice-btn" data-choice="husk">
+              <img class="story-pfp" src="pfp/husk4.jpeg" alt="Husk" onerror="this.outerHTML='😾'"> Hablar con Husk
+            </button>
+            <button class="story-choice-btn" data-choice="angel">
+              <img class="story-pfp" src="pfp/angel4.jpeg" alt="Angel" onerror="this.outerHTML='🕷️'"> Hablar con Angel
+            </button>
             <button class="story-choice-btn" data-choice="bar">🍺 Pedir algo de beber</button>
           </div>
           <div class="story-progress">
@@ -329,23 +337,30 @@
           </div>
 
           <div class="final-header">
-            <div class="final-emoji-row">🐱 🩷 🕷️</div>
+            <div class="final-emoji-row">
+            <img class="final-pfp" src="pfp/husk1.jpeg" alt="Husk" onerror="this.outerHTML='🐱'">
+            <span class="final-heart">🩷</span>
+            <img class="final-pfp" src="pfp/angel1.jpeg" alt="Angel" onerror="this.outerHTML='🕷️'">
+          </div>
             <h2 class="final-title">Para Sof</h2>
             <div class="final-subtitle">con todo el cariño del infierno</div>
           </div>
 
           <div class="final-letter">
             <p class="letter-line" style="--delay: 0.2s">
-              Sof, si llegaste hasta acá es porque te mereces todo esto y más. 🩷
+              Sof, gracias por ser la mejor amiga. 🩷
             </p>
             <p class="letter-line" style="--delay: 0.5s">
-              Hice este lugar pensando en ti — en tu amor por Husk y Angel, en cómo te emocionas con cada episodio, en lo especial que eres.
+              Quise aprovechar tu amor por esta serie para prepararte este regalo, porque no pude ir a tu partido... jsaj. Lo siento de verdad — pero espero que esto ayude aunque sea un poquito.
             </p>
             <p class="letter-line" style="--delay: 0.8s">
-              Como dice Husk en "Loser, Baby": <em>even a loser baby can win sometimes</em>. Y tú, mi querida Sof, no eres ninguna losera — eres lo mejor.
+              Sé que es un regalo un poco raro, pero así somos nosotros, ¿no? Espero que te haya gustado al menos un poco — y si llegaste hasta acá, significa que jugaste la trivia y eso ya me hace feliz. 😄
             </p>
             <p class="letter-line" style="--delay: 1.1s">
-              Gracias por existir, por compartir tus fandoms conmigo, y por hacerme ver Hazbin Hotel contigo. Esto es para ti. 💖
+              Te quiero mucho y gracias por ser mi amiga. 💖
+            </p>
+            <p class="letter-line" style="--delay: 1.4s">
+              <em>(Y también gracias por la pizza. Esa deuda está saldada con esto, creo yo.)</em> 🍕
             </p>
           </div>
 

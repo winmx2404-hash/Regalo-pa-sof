@@ -3613,3 +3613,167 @@ body.theme-addict .video-overlay {
   background: rgba(255,105,180,0.15);
   animation: pulse 2s infinite;
 }
+
+
+/* ========== PFP - FOTOS DE HUSK Y ANGEL ========== */
+
+/* Intro — los dos iconos grandes */
+.intro-char.pfp-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid var(--husk-gold);
+  box-shadow: 0 0 20px rgba(255,0,85,0.5);
+  animation: float 3s ease-in-out infinite;
+  background: var(--charcoal);
+}
+
+.intro-char.angel-char.pfp-img {
+  animation-delay: 1.5s;
+  border-color: var(--angel-pink);
+  box-shadow: 0 0 20px rgba(255,105,180,0.5);
+}
+
+/* Comentarios pequeños — trivia y minijuego */
+.comment-char.pfp-small,
+.pfp-small {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--husk-gold);
+  flex-shrink: 0;
+  background: var(--charcoal);
+}
+
+/* Avatar del chat */
+.chat-avatar.pfp-medium,
+.pfp-medium {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--husk-gold);
+  background: var(--charcoal);
+  transition: all 0.3s cubic-bezier(.34,1.56,.64,1);
+  flex-shrink: 0;
+}
+
+/* Botones selector del chat */
+.char-btn-pfp {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  vertical-align: middle;
+  margin-right: 4px;
+  border: 1px solid currentColor;
+  background: var(--charcoal);
+}
+
+/* Botones de historia */
+.story-pfp {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  vertical-align: middle;
+  margin-right: 6px;
+  border: 2px solid rgba(212,175,55,0.5);
+  background: var(--charcoal);
+}
+
+/* Imagen grande en escena de historia */
+.story-scene-pfp {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid var(--husk-gold);
+  box-shadow: 0 0 25px rgba(212,175,55,0.4);
+  display: block;
+  margin: 0 auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Fila final — iconos grandes del mensaje */
+.final-emoji-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.final-pfp {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid var(--angel-pink);
+  box-shadow: 0 0 15px rgba(255,0,85,0.4);
+  animation: float 3s ease-in-out infinite;
+  background: var(--charcoal);
+}
+
+.final-pfp:last-child {
+  animation-delay: 1.5s;
+  border-color: var(--neon-pink);
+}
+
+.final-heart {
+  font-size: 1.8rem;
+  animation: pulse 2s infinite;
+}
+
+
+/* ========== RELOJ REAL CON ESTÉTICA INFERNAL ========== */
+.hell-clock {
+  background: rgba(0,0,0,0.6);
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--husk-gold);
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  color: var(--husk-gold);
+  text-shadow: 0 0 8px var(--husk-gold), 0 0 20px var(--husk-gold);
+  box-shadow: 0 0 10px rgba(212,175,55,0.3);
+  letter-spacing: 2px;
+  transition: color 1s ease, text-shadow 1s ease;
+  white-space: nowrap;
+}
+
+.clock-colon {
+  display: inline-block;
+  transition: opacity 0.1s;
+  margin: 0 1px;
+}
+
+.clock-seconds {
+  font-size: 0.6em;
+  opacity: 0.6;
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+/* ========== BUBBLE DE SISTEMA EN EL CHAT ========== */
+.system-bubble {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  color: #666 !important;
+  font-style: italic;
+  font-size: 0.8rem !important;
+  align-self: center !important;
+  max-width: 100% !important;
+  text-align: center;
+  border-radius: 10px !important;
+}
