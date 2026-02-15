@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>HAZBIN HOTEL · Para Sof 🩷</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="images/huskbartender.avif">
+  <link rel="preload" as="image" href="images/loserbabycaratula.jpeg">
+  <link rel="preload" as="image" href="images/poisoncaratula.jpeg">
+  <link rel="preload" as="image" href="images/addictcaratula.jpeg">
+</head>
+<body>
+  <div id="app">
+
+    <!-- ========== LOADING SCREEN ========== -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-content">
+        <div class="hellish-logo">🔥 HAZBIN HOTEL 🔥</div>
+        <div class="loading-subtitle">Para Sof, con todo el cariño del infierno</div>
+        <div class="loading-bar">
+          <div class="loading-progress" id="loading-progress"></div>
+        </div>
+        <div class="loading-text" id="loading-text">Calentando el infierno...</div>
+      </div>
+    </div>
+
+    <!-- ========== INTRO DUO ========== -->
+    <div id="duo-intro" class="duo-intro">
+      <div class="duo-intro-inner">
+        <div class="intro-characters">
+          <span class="intro-char husk-char">🐱</span>
+          <span class="intro-char angel-char">🕷️</span>
+        </div>
+        <div class="intro-text" id="intro-text"></div>
+        <button id="enter-btn" class="enter-btn hidden">✨ Entrar al Lounge</button>
+      </div>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="glass-header">
+      <div class="header-left">
+        <i class="fas fa-skull"></i>
+        <span class="hotel-name">Hazbin Lounge</span>
+      </div>
+      <div class="header-right">
+        <div class="hell-clock" id="hell-clock">23:66</div>
+        <div class="sin-counter" id="sin-counter">❤️ 666</div>
+      </div>
+    </header>
+
+    <!-- ========== SECCIONES ========== -->
+
+    <!-- LOUNGE / JUKEBOX -->
+    <section id="lounge" class="section active">
+      <div class="section-header">
+        <h2 class="neon-title">🎵 JUKEBOX INFERNAL</h2>
+        <div class="now-playing" id="now-playing">⏸️ Nada sonando</div>
+      </div>
+      <div class="turntable-container">
+        <div class="turntable">
+          <div class="platter">
+            <div class="vinyl" id="vinyl">
+              <div class="vinyl-label" id="vinyl-label">HAZBIN</div>
+            </div>
+          </div>
+          <div class="tonearm" id="tonearm">
+            <div class="tonearm-base"></div>
+            <div class="tonearm-arm"></div>
+            <div class="tonearm-weight"></div>
+          </div>
+        </div>
+      </div>
+      <div class="playlist">
+        <div class="playlist-header">
+          <span>🎧 PLAYLIST OFICIAL</span>
+          <span class="playlist-counter">3 canciones</span>
+        </div>
+        <div class="song-card" data-song="loser" data-url="music/loserbaby.mp3">
+          <div class="song-cover" style="background-image: url('images/loserbabycaratula.jpeg')"></div>
+          <div class="song-info">
+            <div class="song-title">Loser, Baby</div>
+            <div class="song-artist">Husk & Angel Dust</div>
+          </div>
+          <div class="song-control">
+            <button class="play-song-btn"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+        <div class="song-card" data-song="poison" data-url="music/poison.mp3">
+          <div class="song-cover" style="background-image: url('images/poisoncaratula.jpeg')"></div>
+          <div class="song-info">
+            <div class="song-title">Poison</div>
+            <div class="song-artist">Angel Dust</div>
+          </div>
+          <div class="song-control">
+            <button class="play-song-btn"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+        <div class="song-card" data-song="addict" data-url="music/addict.mp3">
+          <div class="song-cover" style="background-image: url('images/addictcaratula.jpeg')"></div>
+          <div class="song-info">
+            <div class="song-title">Addict</div>
+            <div class="song-artist">Angel Dust</div>
+          </div>
+          <div class="song-control">
+            <button class="play-song-btn"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="volume-control">
+        <i class="fas fa-volume-down"></i>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
+        <i class="fas fa-volume-up"></i>
+      </div>
+    </section>
+
+    <!-- SHOWROOM / GALERÍA MEJORADA -->
+    <section id="showroom" class="section">
+      <div class="section-header">
+        <h2 class="neon-title pink">📸 ÁLBUM DE SOF</h2>
+        <div class="gallery-filter">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="husk">Husk</button>
+          <button class="filter-btn" data-filter="angel">Angel</button>
+          <button class="filter-btn" data-filter="duo">Duo</button>
+          <button class="filter-btn" data-filter="nosotros">💖 Nosotros</button>
+        </div>
+      </div>
+
+      <!-- FOTO ESPECIAL - tarjeta destacada -->
+      <div class="special-photo-card glass" id="special-photo-wrapper">
+        <div class="special-photo-label">💖 TÚ Y YO</div>
+        <div class="special-photo-frame">
+          <img src="images/foto-sof.jpg" alt="Nosotros" class="special-photo" id="special-photo"
+            onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸<br><small>Sube tu foto aquí<br>(images/foto-sof.jpg)</small></div>'">
+        </div>
+        <div class="special-photo-caption">Con cariño, desde el infierno 🩷</div>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid"></div>
+
+      <!-- Modal -->
+      <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="modal-caption"></div>
+      </div>
+    </section>
+
+    <!-- BAR + JUEGOS -->
+    <section id="bar" class="section">
+      <div class="section-header">
+        <h2 class="neon-title gold">🍸 HUSK'S BAR & GAMES</h2>
+        <div class="bar-tabs">
+          <button class="tab-btn active" data-tab="drinks">🍹 Bar</button>
+          <button class="tab-btn" data-tab="trivia">🧠 Trivia</button>
+          <button class="tab-btn" data-tab="souls">🎯 Almas</button>
+          <button class="tab-btn" data-tab="chat">💬 Chat</button>
+          <button class="tab-btn" data-tab="story">📖 Historia</button>
+        </div>
+      </div>
+
+      <!-- BAR ORIGINAL -->
+      <div id="drinks-tab" class="tab-content active">
+        <div class="bar-container glass">
+          <div class="bar-header">
+            <img src="images/huskbartender.avif" alt="Husk" class="husk-avatar">
+            <div class="husk-speech" id="husk-speech">¿Qué quieres, idiota?</div>
+          </div>
+          <div class="drinks-menu">
+            <div class="drink-item" data-drink="whiskey">
+              <span class="drink-name">🥃 Whiskey del infierno</span>
+              <span class="drink-price">666 almas</span>
+            </div>
+            <div class="drink-item" data-drink="cocktail">
+              <span class="drink-name">🍹 Angel's Kiss</span>
+              <span class="drink-price">420 almas</span>
+            </div>
+            <div class="drink-item" data-drink="beer">
+              <span class="drink-name">🍺 Cerveza de Charlie</span>
+              <span class="drink-price">333 almas</span>
+            </div>
+            <div class="drink-item" data-drink="special">
+              <span class="drink-name">🎲 La casa nunca gana</span>
+              <span class="drink-price">? almas</span>
+            </div>
+          </div>
+          <button id="order-random-btn" class="order-btn">🍷 PEDIR TRAGO ALEATORIO</button>
+          <div id="drink-result" class="drink-result">...</div>
+        </div>
+      </div>
+
+      <!-- TRIVIA HAZBIN -->
+      <div id="trivia-tab" class="tab-content">
+        <div class="game-container glass">
+          <div class="game-header">
+            <h3>🧠 TRIVIA DEL INFIERNO</h3>
+            <div class="game-subtitle">¿Cuánto sabes de Hazbin Hotel?</div>
+          </div>
+          <div class="trivia-hud">
+            <div class="trivia-stat">❤️ <span id="trivia-lives">3</span> vidas</div>
+            <div class="trivia-stat">⭐ <span id="trivia-score">0</span> pts</div>
+            <div class="trivia-stat">🔥 Racha: <span id="trivia-streak">0</span></div>
+          </div>
+          <div id="trivia-question-box" class="trivia-question-box">
+            <div class="trivia-question" id="trivia-question">Presiona START para comenzar</div>
+            <div class="trivia-options" id="trivia-options"></div>
+          </div>
+          <div class="trivia-feedback" id="trivia-feedback"></div>
+          <div class="trivia-husk-comment glass" id="trivia-husk-comment">
+            <span class="comment-char">😾</span>
+            <span id="trivia-comment-text">Husk: "Demuéstrame que sabes algo..."</span>
+          </div>
+          <button class="game-btn" id="trivia-start-btn">🎮 EMPEZAR TRIVIA</button>
+          <div id="trivia-end" class="trivia-end hidden">
+            <div class="end-title" id="trivia-end-title">¡Fin del juego!</div>
+            <div class="end-score" id="trivia-end-score"></div>
+            <button class="game-btn" id="trivia-retry-btn">🔄 INTENTAR DE NUEVO</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MINIJUEGO: ATRAPA ALMAS -->
+      <div id="souls-tab" class="tab-content">
+        <div class="game-container glass">
+          <div class="game-header">
+            <h3>🎯 ATRAPA LAS ALMAS</h3>
+            <div class="game-subtitle">Toca las almas antes de que escapen — ¡sin tocar las calaveras!</div>
+          </div>
+          <div class="souls-hud">
+            <div class="trivia-stat">👻 <span id="souls-score">0</span></div>
+            <div class="trivia-stat">⏱️ <span id="souls-timer">30</span>s</div>
+            <div class="trivia-stat">💀 Fallos: <span id="souls-misses">0</span>/5</div>
+          </div>
+          <div id="souls-arena" class="souls-arena">
+            <div class="souls-start-msg" id="souls-start-msg">
+              <div class="souls-big-emoji">👻</div>
+              <p>¡Atrapa las almas rosadas!</p>
+              <p style="color:#ff0055">Evita las calaveras 💀</p>
+              <button class="game-btn" id="souls-start-btn">🎮 JUGAR</button>
+            </div>
+          </div>
+          <div class="souls-angel-comment glass" id="souls-angel-comment">
+            <span class="comment-char">🕷️</span>
+            <span id="souls-comment-text">Angel: "¿En serio eres tan lento, cariño?"</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHAT CON HUSK O ANGEL -->
+      <div id="chat-tab" class="tab-content">
+        <div class="game-container glass">
+          <div class="chat-character-selector">
+            <button class="char-btn active" data-char="husk">😾 Husk</button>
+            <button class="char-btn" data-char="angel">🕷️ Angel Dust</button>
+          </div>
+          <div class="chat-header" id="chat-header">
+            <div class="chat-avatar" id="chat-avatar">😾</div>
+            <div>
+              <div class="chat-name" id="chat-name">Husk</div>
+              <div class="chat-status">En el bar del infierno</div>
+            </div>
+          </div>
+          <div class="chat-messages" id="chat-messages">
+            <div class="chat-bubble bot-bubble">
+              <span>¿Qué quieres, idiota? No tengo todo el día... bueno, técnicamente tengo la eternidad, pero igualmente.</span>
+            </div>
+          </div>
+          <div class="chat-input-area">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Escribe algo..." maxlength="200">
+            <button class="chat-send-btn" id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+          </div>
+          <div class="chat-loading hidden" id="chat-loading">
+            <div class="typing-indicator"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HISTORIA INTERACTIVA -->
+      <div id="story-tab" class="tab-content">
+        <div class="game-container glass">
+          <div class="game-header">
+            <h3>📖 UNA NOCHE EN EL LOUNGE</h3>
+            <div class="game-subtitle">Tu historia en el infierno</div>
+          </div>
+          <div id="story-scene" class="story-scene">
+            <div class="story-image-area" id="story-image">🍸</div>
+            <div class="story-text" id="story-text">
+              Es una noche tranquila en el Hazbin Hotel. El bar huele a whiskey y a decisiones malas. Husk limpia un vaso con cara de pocos amigos, y Angel Dust está sentado en la barra mirando el techo. De repente, te ven entrar.
+            </div>
+          </div>
+          <div class="story-choices" id="story-choices">
+            <button class="story-choice-btn" data-choice="husk">😾 Hablar con Husk</button>
+            <button class="story-choice-btn" data-choice="angel">🕷️ Hablar con Angel</button>
+            <button class="story-choice-btn" data-choice="bar">🍺 Pedir algo de beber</button>
+          </div>
+          <div class="story-progress">
+            <div class="story-progress-bar" id="story-progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENSAJE FINAL PARA SOF -->
+    <section id="final" class="section">
+      <div id="final-locked" class="final-locked">
+        <div class="lock-icon">🔒</div>
+        <h3 class="neon-title pink">Mensaje Especial</h3>
+        <p class="lock-hint">Completa la trivia para desbloquear 🧠</p>
+        <div class="lock-progress-wrap">
+          <div class="lock-progress-bar" id="lock-progress-bar"></div>
+        </div>
+        <p class="lock-score-hint" id="lock-score-hint">0 / 10 puntos necesarios</p>
+      </div>
+
+      <div id="final-reveal" class="final-reveal hidden">
+        <!-- Partículas de fondo -->
+        <div class="particles-container" id="particles-container"></div>
+
+        <div class="final-content glass">
+          <div class="final-photo-frame">
+            <img src="images/foto-sof.jpg" alt="Sof y yo" class="final-photo"
+              onerror="this.src='images/huskyangel.png'">
+            <div class="final-photo-glow"></div>
+          </div>
+
+          <div class="final-header">
+            <div class="final-emoji-row">🐱 🩷 🕷️</div>
+            <h2 class="final-title">Para Sof</h2>
+            <div class="final-subtitle">con todo el cariño del infierno</div>
+          </div>
+
+          <div class="final-letter">
+            <p class="letter-line" style="--delay: 0.2s">
+              Sof, si llegaste hasta acá es porque te mereces todo esto y más. 🩷
+            </p>
+            <p class="letter-line" style="--delay: 0.5s">
+              Hice este lugar pensando en ti — en tu amor por Husk y Angel, en cómo te emocionas con cada episodio, en lo especial que eres.
+            </p>
+            <p class="letter-line" style="--delay: 0.8s">
+              Como dice Husk en "Loser, Baby": <em>even a loser baby can win sometimes</em>. Y tú, mi querida Sof, no eres ninguna losera — eres lo mejor.
+            </p>
+            <p class="letter-line" style="--delay: 1.1s">
+              Gracias por existir, por compartir tus fandoms conmigo, y por hacerme ver Hazbin Hotel contigo. Esto es para ti. 💖
+            </p>
+          </div>
+
+          <div class="final-signature">
+            <div class="sig-from">Con mucho cariño,</div>
+            <div class="sig-name">Tu amigo/a del infierno 🔥</div>
+          </div>
+
+          <div class="final-duo-quote glass">
+            <div class="duo-quote-text">"Even in Hell... someone always stays."</div>
+            <div class="duo-quote-sub">— Hazbin Hotel 🐱🕷️</div>
+          </div>
+
+          <button class="final-replay-btn" id="final-replay-btn">🎵 Escuchar Loser, Baby</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCK DE NAVEGACIÓN -->
+    <nav class="dock">
+      <button class="dock-btn active" data-section="lounge">
+        <i class="fas fa-record-vinyl"></i>
+        <span>Lounge</span>
+      </button>
+      <button class="dock-btn" data-section="showroom">
+        <i class="fas fa-images"></i>
+        <span>Álbum</span>
+      </button>
+      <button class="dock-btn" data-section="bar">
+        <i class="fas fa-cocktail"></i>
+        <span>Bar</span>
+      </button>
+      <button class="dock-btn" data-section="final">
+        <i class="fas fa-heart"></i>
+        <span>Para Sof</span>
+      </button>
+    </nav>
+
+    <audio id="jukebox-audio" preload="metadata"></audio>
+  </div>
+
+  <!-- Videos de fondo -->
+  <div class="video-overlay"></div>
+  <video id="video-loser" class="theme-video" autoplay muted loop playsinline preload="auto">
+    <source src="videos/loser-bg.mp4" type="video/mp4">
+  </video>
+  <video id="video-poison" class="theme-video" autoplay muted loop playsinline preload="auto">
+    <source src="videos/poison-bg.mp4" type="video/mp4">
+  </video>
+  <video id="video-addict" class="theme-video" autoplay muted loop playsinline preload="auto">
+    <source src="videos/addict-bg.mp4" type="video/mp4">
+  </video>
+
+  <script src="script.js"></script>
+</body>
+</html>
